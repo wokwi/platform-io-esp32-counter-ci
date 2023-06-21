@@ -1,0 +1,37 @@
+name: Pushbutton counter test
+version: 1
+author: Uri Shaked
+
+steps:
+  - wait-serial: 'Pushbutton Counter'
+
+  # Press once
+  - set-control:
+      part-id: btn1
+      control: pressed
+      value: 1
+  - delay: 100ms
+  - set-control:
+      part-id: btn1
+      control: pressed
+      value: 0
+  - delay: 200ms
+
+  # Press 2nd time
+  - set-control:
+      part-id: btn1
+      control: pressed
+      value: 1
+  - delay: 100ms
+  - set-control:
+      part-id: btn1
+      control: pressed
+      value: 0
+  - delay: 200ms
+
+  # Press for the 3rd time
+  - set-control:
+      part-id: btn1
+      control: pressed
+      value: 1
+  - wait-serial: 'Button pressed 3 times'

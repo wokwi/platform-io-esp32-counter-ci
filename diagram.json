@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "author": "Uri Shaked",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": -62.5, "left": 52.6, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 15.8,
+      "left": 192,
+      "attrs": { "color": "green", "bounce": "0" }
+    },
+    { "type": "wokwi-gnd", "id": "gnd1", "top": 67.2, "left": 268.2, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "btn1:1.l", "esp:D5", "green", [ "h0" ] ],
+    [ "btn1:2.r", "gnd1:GND", "black", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
